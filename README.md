@@ -4,4 +4,5 @@ These are godot projects for [Lua Make Games](https://www.youtube.com/channel/UC
 
 ## List of Tutorials
 
-- [Godot 2D Platformer Move and Jump](tilemap/README.md)
+- [Godot TileMap: Single, AutoTile and Atlas TileSet](tilemap/README.md)
+- [Godot 2D Platformer Move and Jump](2d_platformer_move/README.md)
