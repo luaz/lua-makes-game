@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://obstacle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://spawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world.gd" type="Script" id=6]
+
+[node name="World" type="Node"]
+script = ExtResource( 6 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 1 )
+
+[node name="Obstacle" parent="." instance=ExtResource( 3 )]
+position = Vector2( 912, 401 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576, 404 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 925, 293 )
+
+[node name="Spawn" parent="." instance=ExtResource( 5 )]
+position = Vector2( 78, 421 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="SpawnArea" type="ReferenceRect" parent="."]
+margin_left = 34.0
+margin_top = 128.0
+margin_right = 363.0
+margin_bottom = 461.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnPosition" type="Node" parent="."]
+
+[node name="Position2D" type="Position2D" parent="SpawnPosition" groups=[
+"spawn",
+]]
+position = Vector2( 189, 428 )
+
+[node name="Position2D2" type="Position2D" parent="SpawnPosition" groups=[
+"spawn",
+]]
+position = Vector2( 737, 435 )
+
+[node name="Position2D3" type="Position2D" parent="SpawnPosition" groups=[
+"spawn",
+]]
+position = Vector2( 446, 216 )
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
