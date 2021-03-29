@@ -41,8 +41,8 @@ func _physics_process(delta):
 
 func _input(event):
     if event.is_action_pressed("attack"):
-        attack()
-        # attack_arc()targetting
+        # attack()
+        attack_arc()
         
 func attack():
     var projectile = Projectile.instance()
