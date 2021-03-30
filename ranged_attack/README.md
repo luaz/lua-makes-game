@@ -27,3 +27,17 @@ Godot 3.2: Shoot parabolic arc projectile motion targetting enemy position.
 - Change Arc Movement/TRavel Time Based on Distance
 
 [![Godot Arc Projectile](http://img.youtube.com/vi/2eqRX3rZrZE/0.jpg)](http://www.youtube.com/watch?v=2eqRX3rZrZE)
+
+# Godot Homing Projectile
+
+Godot 3.2: 2D side scroller shoot homing missles targeting enemy.
+
+- Existing Project
+- Homing Projectile
+- Homing Projectile Script
+- Player Launch Projectile
+- Projectile Collision with Target
+- Make Projectile Fly to Sky before Homing Target
+- Make Homing Projectile Faster and More Agile
+
+[![Godot Arc Projectile](http://img.youtube.com/vi/mQ2U3xnFU6M/0.jpg)](http://www.youtube.com/watch?v=mQ2U3xnFU6M)

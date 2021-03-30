@@ -10,6 +10,7 @@ var screen_size
 
 onready var Projectile = preload("res://projectile.tscn")
 onready var ProjectileArc = preload("res://projectile_arc.tscn")
+onready var ProjectileHoming = preload("res://projectile_homing.tscn")
 onready var world = get_node("/root/World")
 onready var enemy = get_node("/root/World/Enemy")
 
@@ -42,7 +43,8 @@ func _physics_process(delta):
 func _input(event):
     if event.is_action_pressed("attack"):
         # attack()
-        attack_arc()
+        # attack_arc()
+        attack_homing()
         
 func attack():
     var projectile = Projectile.instance()
@@ -62,6 +64,14 @@ func attack_arc():
     
     if enemy:
         projectile.launch(enemy.position)
+
+func attack_homing():
+    var projectile = ProjectileHoming.instance()
+    world.add_child(projectile)
+    projectile.position = position
+    
+    if enemy:
+        projectile.launch(enemy)
 
 func die():
     queue_free()   
